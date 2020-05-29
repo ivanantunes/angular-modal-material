@@ -162,4 +162,150 @@
       </div>
     </div>
 
+    <!-- MODAL TEMPLATE ERROR -->
+
+    <div *ngSwitchCase="'template_error'">
+      <svg viewBox="0 0 130.2 130.2">
+        <circle class="path circle" fill="none" stroke="#D06079" stroke-width="6" stroke-miterlimit="10" cx="65.1"
+          cy="65.1" r="62.1" />
+        <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3" />
+        <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2" />
+      </svg>
+
+      <div style="padding: 0 24px;">
+        <span class="modalTitle">{{modal.title}}</span>
+        <p class="modalDescription">{{modal.description}}</p>
+      </div>
+      <button mat-button (click)="closeModal()" mat-raised-button color="warn" class="modalButton"><i
+          class="fas fa-times"></i>&nbsp; {{modal.btnCloseTitle}}</button>
+    </div>
+
+    <!-- MODAL TEMPLATE ERROR LOG -->
+
+    <div *ngSwitchCase="'template_error_log'">
+      <svg viewBox="0 0 130.2 130.2">
+        <circle class="path circle" fill="none" stroke="#D06079" stroke-width="6" stroke-miterlimit="10" cx="65.1"
+          cy="65.1" r="62.1" />
+        <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3" />
+        <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2" />
+      </svg>
+
+      <div style="padding: 0 24px;">
+        <span class="modalTitle">{{modal.title}}</span>
+        <p class="modalDescription">{{modal.description}}</p>
+      </div>
+
+      <div style="padding: 0 24px; border: 2px dashed red;" *ngIf="showLog">
+        <p class="modalDescription">{{modal.log}}</p>
+      </div>
+
+      <div mat-dialog-actions>
+        <button mat-button (click)="this.showLog = !this.showLog" mat-raised-button color="primary" class="modalButton">
+          <i class="fas fa-info"></i>&nbsp; {{modal.btnLogTitle}}</button>
+        <button mat-button (click)="closeModal()" mat-raised-button color="warn" class="modalButton">
+          <i class="fas fa-times"></i>&nbsp; {{modal.btnCloseTitle}}</button>
+      </div>
+    </div>
+
+    <!-- MODAL TEMPLATE ERROR CONFIRM -->
+
+    <div *ngSwitchCase="'template_alert_confirm'">
+      <svg viewBox="0 0 130.2 130.2">
+        <circle class="path circle" fill="none" stroke="#D06079" stroke-width="6" stroke-miterlimit="10" cx="65.1"
+          cy="65.1" r="62.1" />
+        <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3" />
+        <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2" />
+      </svg>
+
+      <div style="padding: 0 24px;">
+        <span class="modalTitle">{{modal.title}}</span>
+        <p class="modalDescription">{{modal.description}}</p>
+      </div>
+
+      <div mat-dialog-actions>
+        <button mat-button (click)="this.showLog = !this.showLog" (click)="acceptModalConfirme()" mat-raised-button
+          color="primary" class="modalButton">
+          <i class="fas fa-check"></i>&nbsp; {{modal.btnConfirmTitle}}</button>
+        <button mat-button (click)="closeModalConfirm()" mat-raised-button color="warn" class="modalButton">
+          <i class="fas fa-times"></i>&nbsp; {{modal.btnCloseTitle}}</button>
+      </div>
+    </div>
+
+    <!-- MODAL BASIC -->
+
+    <div *ngSwitchCase="'modal_basic'">
+      <div class="fade-in-modalB" style="margin-bottom: 5%;">
+        <div [style.border-color]="modal.mBackgroundColorIcon">
+          <mat-icon *ngIf="modal.useMatIcon; else useFasIcon" class="modalBicon"
+            [style.color]="modal.mBackgroundColorIcon">{{modal.icon}}</mat-icon>
+          <ng-template #useFasIcon>
+            <i class="modalBicon" [style.color]="modal.mBackgroundColorIcon" [ngClass]="modal.icon"></i>
+          </ng-template>
+        </div>
+      </div>
+      <div style="padding: 0 24px;">
+        <span class="modalTitle">{{modal.title}}</span>
+        <p class="modalDescription">{{modal.description}}</p>
+      </div>
+      <button mat-button (click)="closeModal()" mat-raised-button color="warn" class="modalButton"><i
+          class="fas fa-times"></i>&nbsp; {{modal.btnCloseTitle}}</button>
+    </div>
+
+    <!-- MODAL LOG -->
+
+    <div *ngSwitchCase="'modal_log'">
+      <div class="fade-in-modalB" style="margin-bottom: 5%;">
+        <div [style.border-color]="modal.mBackgroundColorIcon">
+          <mat-icon *ngIf="modal.useMatIcon; else useFasIcon" class="modalBicon"
+            [style.color]="modal.mBackgroundColorIcon">{{modal.icon}}</mat-icon>
+          <ng-template #useFasIcon>
+            <i class="modalBicon" [style.color]="modal.mBackgroundColorIcon" [ngClass]="modal.icon"></i>
+          </ng-template>
+        </div>
+      </div>
+      <div style="padding: 0 24px;">
+        <span class="modalTitle">{{modal.title}}</span>
+        <p class="modalDescription">{{modal.description}}</p>
+      </div>
+      <div style="padding: 0 24px; border: 2px dashed red;" *ngIf="showLog">
+        <p class="modalDescription">{{modal.log}}</p>
+      </div>
+      <div mat-dialog-actions>
+        <button mat-button (click)="this.showLog = !this.showLog" mat-raised-button color="primary" class="modalButton">
+          <i class="fas fa-info"></i>&nbsp; {{modal.btnLogTitle}}</button>
+        <button mat-button (click)="closeModal()" mat-raised-button color="warn" class="modalButton">
+          <i class="fas fa-times"></i>&nbsp; {{modal.btnCloseTitle}}</button>
+      </div>
+    </div>
+
+    <!-- MODAL CONFIRM -->
+
+    <div *ngSwitchCase="'modal_confirm'">
+      <div class="fade-in-modalB" style="margin-bottom: 5%;">
+        <div [style.border-color]="modal.mBackgroundColorIcon">
+          <mat-icon *ngIf="modal.useMatIcon; else useFasIcon" class="modalBicon"
+            [style.color]="modal.mBackgroundColorIcon">{{modal.icon}}</mat-icon>
+          <ng-template #useFasIcon>
+            <i class="modalBicon" [style.color]="modal.mBackgroundColorIcon" [ngClass]="modal.icon"></i>
+          </ng-template>
+        </div>
+      </div>
+      <div style="padding: 0 24px;">
+        <span class="modalTitle">{{modal.title}}</span>
+        <p class="modalDescription">{{modal.description}}</p>
+      </div>
+      <div mat-dialog-actions>
+        <button mat-button (click)="this.showLog = !this.showLog" (click)="acceptModalConfirme()" mat-raised-button
+          color="primary" class="modalButton">
+          <i class="fas fa-check"></i>&nbsp; {{modal.btnConfirmTitle}}</button>
+        <button mat-button (click)="closeModalConfirm()" mat-raised-button color="warn" class="modalButton">
+          <i class="fas fa-times"></i>&nbsp; {{modal.btnCloseTitle}}</button>
+      </div>
+    </div>
 </div>
