@@ -7,7 +7,7 @@ export enum ModalType {
   // Template Alert
   tAlert = 'template_alert',
   tAlertLog = 'template_alert_log',
-  tAlertConfirm = 'template_confirm',
+  tAlertConfirm = 'template_alert_confirm',
 
   // Tempalte Error
   tError = 'template_error',

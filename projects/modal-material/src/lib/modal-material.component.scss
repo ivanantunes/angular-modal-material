@@ -1,0 +1,135 @@
+/* Class Base */
+.modalTitle {
+  font-weight: bold;
+  font-size: x-large;
+  text-align: center;
+  display: block;
+}
+
+.modalDescription {
+  text-align: center;
+  display: block;
+  font-size: 1.25em;
+  margin: 15px;
+  word-wrap: break-word;
+}
+
+.modalButton {
+  display: flex;
+  margin: auto;
+}
+
+// .modalBcircle {
+//   height: 100px;
+//   width: 100px;
+//   margin: auto;
+//   border-radius: 50%;
+//   background-color: white;
+//   border: 5px solid;
+//   box-shadow: 2px 1px 2px black;
+// }
+
+.modalBicon {
+  // font-size: 4em;
+  // vertical-align: middle;
+  // margin: 20%;
+  color: red;
+  display: block;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  font-size: 6.5em;
+}
+
+/* Modal Base */
+.fade-in-modalB {
+  -webkit-animation: fade-in-modalB 2s linear both;
+  animation: fade-in-modalB 2s linear both;
+}
+
+@-webkit-keyframes fade-in-modalB  {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in-modalB  {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* Modal Template */
+svg {
+  width: 100px;
+  display: block;
+  margin: 0px auto 20px;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+
+  &.circle {
+    -webkit-animation: dash .9s ease-in-out;
+    animation: dash .9s ease-in-out;
+  }
+
+  &.line {
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash .9s .35s ease-in-out forwards;
+    animation: dash .9s .35s ease-in-out forwards;
+  }
+
+  &.check {
+    stroke-dashoffset: -100;
+    -webkit-animation: dash-check .9s .35s ease-in-out forwards;
+    animation: dash-check .9s .35s ease-in-out forwards;
+  }
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+
+  100% {
+    stroke-dashoffset: 900;
+  }
+}

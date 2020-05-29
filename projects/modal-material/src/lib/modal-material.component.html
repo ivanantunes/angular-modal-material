@@ -1,0 +1,165 @@
+<div [ngSwitch]="modal.controlType">
+
+  <!-- MODAL TEMPLATE SUCCESS -->
+
+  <div *ngSwitchCase="'template_success'">
+    <svg viewBox="0 0 130.2 130.2">
+      <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1"
+        cy="65.1" r="62.1" />
+      <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round"
+        stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+    </svg>
+
+    <div style="padding: 0 24px;">
+      <span class="modalTitle">{{modal.title}}</span>
+      <p class="modalDescription">{{modal.description}}</p>
+    </div>
+    <button mat-button (click)="closeModal()" mat-raised-button color="warn" class="modalButton"><i
+        class="fas fa-times"></i>&nbsp; {{modal.btnCloseTitle}}</button>
+  </div>
+
+  <!-- MODAL TEMPLATE SUCCESS LOG -->
+
+  <div *ngSwitchCase="'template_success_log'">
+    <svg viewBox="0 0 130.2 130.2">
+      <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1"
+        cy="65.1" r="62.1" />
+      <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round"
+        stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+    </svg>
+
+    <div style="padding: 0 24px;">
+      <span class="modalTitle">{{modal.title}}</span>
+      <p class="modalDescription">{{modal.description}}</p>
+    </div>
+
+    <div style="padding: 0 24px; border: 2px dashed red;" *ngIf="showLog">
+      <p class="modalDescription">{{modal.log}}</p>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-button (click)="this.showLog = !this.showLog" mat-raised-button color="primary" class="modalButton">
+        <i class="fas fa-info"></i>&nbsp; {{modal.btnLogTitle}}</button>
+      <button mat-button (click)="closeModal()" mat-raised-button color="warn" class="modalButton">
+        <i class="fas fa-times"></i>&nbsp; {{modal.btnCloseTitle}}</button>
+    </div>
+  </div>
+
+  <!-- MODAL TEMPLATE SUCCESS CONFIRM -->
+
+  <div *ngSwitchCase="'template_success_confirm'">
+    <svg viewBox="0 0 130.2 130.2">
+      <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1"
+        cy="65.1" r="62.1" />
+      <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round"
+        stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+    </svg>
+
+    <div style="padding: 0 24px;">
+      <span class="modalTitle">{{modal.title}}</span>
+      <p class="modalDescription">{{modal.description}}</p>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-button (click)="this.showLog = !this.showLog" (click)="acceptModalConfirme()" mat-raised-button
+        color="primary" class="modalButton">
+        <i class="fas fa-check"></i>&nbsp; {{modal.btnConfirmTitle}}</button>
+      <button mat-button (click)="closeModalConfirm()" mat-raised-button color="warn" class="modalButton">
+        <i class="fas fa-times"></i>&nbsp; {{modal.btnCloseTitle}}</button>
+    </div>
+  </div>
+
+    <!-- MODAL TEMPLATE ALERT -->
+
+    <div *ngSwitchCase="'template_alert'">
+      <svg viewBox="0 0 130.2 130.2">
+        <circle class="path circle" fill="none" stroke="#cccc00" stroke-width="6" stroke-miterlimit="10" cx="65.1"
+          cy="65.1" r="62.1" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="65" y1="25" x2="30" y2="90" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="100" y1="90" x2="65" y2="25" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="100" y1="90" x2="30" y2="90" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="65" y1="50" x2="65" y2="65" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="65" y1="80" x2="65" y2="80" />
+      </svg>
+
+      <div style="padding: 0 24px;">
+        <span class="modalTitle">{{modal.title}}</span>
+        <p class="modalDescription">{{modal.description}}</p>
+      </div>
+      <button mat-button (click)="closeModal()" mat-raised-button color="warn" class="modalButton"><i
+          class="fas fa-times"></i>&nbsp; {{modal.btnCloseTitle}}</button>
+    </div>
+
+    <!-- MODAL TEMPLATE ALERT LOG -->
+
+    <div *ngSwitchCase="'template_alert_log'">
+      <svg viewBox="0 0 130.2 130.2">
+        <circle class="path circle" fill="none" stroke="#cccc00" stroke-width="6" stroke-miterlimit="10" cx="65.1"
+          cy="65.1" r="62.1" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="65" y1="25" x2="30" y2="90" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="100" y1="90" x2="65" y2="25" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="100" y1="90" x2="30" y2="90" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="65" y1="50" x2="65" y2="65" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="65" y1="80" x2="65" y2="80" />
+      </svg>
+
+      <div style="padding: 0 24px;">
+        <span class="modalTitle">{{modal.title}}</span>
+        <p class="modalDescription">{{modal.description}}</p>
+      </div>
+
+      <div style="padding: 0 24px; border: 2px dashed red;" *ngIf="showLog">
+        <p class="modalDescription">{{modal.log}}</p>
+      </div>
+
+      <div mat-dialog-actions>
+        <button mat-button (click)="this.showLog = !this.showLog" mat-raised-button color="primary" class="modalButton">
+          <i class="fas fa-info"></i>&nbsp; {{modal.btnLogTitle}}</button>
+        <button mat-button (click)="closeModal()" mat-raised-button color="warn" class="modalButton">
+          <i class="fas fa-times"></i>&nbsp; {{modal.btnCloseTitle}}</button>
+      </div>
+    </div>
+
+    <!-- MODAL TEMPLATE ALERT CONFIRM -->
+
+    <div *ngSwitchCase="'template_alert_confirm'">
+      <svg viewBox="0 0 130.2 130.2">
+        <circle class="path circle" fill="none" stroke="#cccc00" stroke-width="6" stroke-miterlimit="10" cx="65.1"
+          cy="65.1" r="62.1" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="65" y1="25" x2="30" y2="90" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="100" y1="90" x2="65" y2="25" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="100" y1="90" x2="30" y2="90" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="65" y1="50" x2="65" y2="65" />
+        <line class="path line" fill="none" stroke="#cccc00" stroke-width="6" stroke-linecap="round"
+          stroke-miterlimit="10" x1="65" y1="80" x2="65" y2="80" />
+      </svg>
+
+      <div style="padding: 0 24px;">
+        <span class="modalTitle">{{modal.title}}</span>
+        <p class="modalDescription">{{modal.description}}</p>
+      </div>
+
+      <div mat-dialog-actions>
+        <button mat-button (click)="this.showLog = !this.showLog" (click)="acceptModalConfirme()" mat-raised-button
+          color="primary" class="modalButton">
+          <i class="fas fa-check"></i>&nbsp; {{modal.btnConfirmTitle}}</button>
+        <button mat-button (click)="closeModalConfirm()" mat-raised-button color="warn" class="modalButton">
+          <i class="fas fa-times"></i>&nbsp; {{modal.btnCloseTitle}}</button>
+      </div>
+    </div>
+
+</div>
