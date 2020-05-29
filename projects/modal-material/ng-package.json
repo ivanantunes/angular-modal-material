@@ -1,0 +1,10 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/modal-material",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "components-font-awesome": "components-font-awesome"
+    }
+  }
+}
