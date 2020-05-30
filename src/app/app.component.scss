@@ -1,0 +1,37 @@
+.title-example {
+  font-size: 4em;
+  text-align: center;
+  padding: 3%;
+}
+
+.container-cards {
+  display: flex;
+  width: auto;
+  margin: 2% auto;
+}
+
+.container-card {
+  width: auto;
+  margin: 1%;
+}
+
+.container-card-header {
+  display: block;
+  margin: auto;
+}
+
+.container-card-header-title {
+  text-align: center;
+}
+
+.container-card-actions {
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .container-cards {
+    width: 50%;
+    display: block;
+  }
+}
