@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "bb": "ng build modal-material --watch",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
