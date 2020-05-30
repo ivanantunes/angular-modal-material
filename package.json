@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "bb": "ng build modal-material --watch",
-    "build": "ng build",
+    "build": "ng build angular-modal-material --prod --base-href https://ivanantunes.github.io/angular-modal-material/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -24,6 +24,7 @@
     "@angular/router": "~9.0.6",
     "components-font-awesome": "^5.9.0",
     "material-design-icons": "^3.0.1",
+    "modal-material": "0.0.1",
     "roboto-fontface": "^0.10.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
