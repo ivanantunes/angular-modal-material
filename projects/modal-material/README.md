@@ -5,6 +5,8 @@ A service developed based on the angular material. Containing customizable and t
 
 <p align="center">
 <a href="https://badge.fury.io/for/js/modal-material"><img src="https://badge.fury.io/js/modal-material.svg" alt="npm version" ></a>
+<a href="https://www.npmjs.com/package/modal-material"><img src="https://img.shields.io/badge/Downloads-350%2FWeekly-green" alt="npm downloads" ></a>
+<a href="https://www.npmjs.com/package/modal-material"><img alt="" src="https://travis-ci.com/ivanantunes/angular-modal-material.svg?branch=master"></a>
 </p>
 
 ## Table of contents
