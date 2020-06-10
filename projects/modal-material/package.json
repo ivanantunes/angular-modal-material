@@ -1,6 +1,6 @@
 {
   "name": "modal-material",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "A service developed based on the angular material. Containing customizable and templete alerts.",
   "author": {
     "email": "ivanantnes75@gmail.com",
