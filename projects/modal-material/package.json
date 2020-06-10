@@ -27,8 +27,7 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/material": "^9.1.2",
-    "components-font-awesome": "^5.9.0",
-    "tslib": "^1.10.0"
+    "@angular/material": "^6.4.7",
+    "components-font-awesome": "^5.9.0"
   }
 }
