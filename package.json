@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "bb": "ng build modal-material --watch",
-    "build-lib": "ng build modal-material",
+    "build-lib": "ng build modal-material --prod",
     "build": "ng build angular-modal-material --prod --base-href https://ivanantunes.github.io/angular-modal-material/",
     "verison-patch": "npm version patch && cd projects/modal-material/ && npm version patch && cd .. && cd ..",
     "gh-pages": "./node_modules/.bin/gh-pages -d dist/angular-modal-material/",
