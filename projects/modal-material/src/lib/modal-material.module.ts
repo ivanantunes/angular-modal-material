@@ -11,10 +11,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 
 // Component
-import { ModalMaterialComponent } from './modal-material.component';
+import { ModalMaterialComponent } from './modal-material/modal-material.component';
 
 // Service
-import { ModalMaterialService } from './modal-material.service';
+import { ModalMaterialService } from './services/modal-material.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { ModalMaterialService } from './modal-material.service';
     MatIconModule
   ],
   exports: [
-    ModalMaterialComponent
+    ModalMaterialComponent,
+    ModalMaterialService
   ],
   providers: [
     ModalMaterialService

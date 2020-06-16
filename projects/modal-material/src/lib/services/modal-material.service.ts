@@ -1,7 +1,7 @@
 import { MatDialog } from '@angular/material/dialog';
 import { Injectable } from '@angular/core';
-import { ModalType } from './interfaces/modal-type';
-import { ModalMaterialComponent } from './modal-material.component';
+import { ModalType } from './../interfaces/modal-type';
+import { ModalMaterialComponent } from './../modal-material/modal-material.component';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
