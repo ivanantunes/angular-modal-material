@@ -31,8 +31,7 @@ import { ModalMaterialService } from './services/modal-material.service';
     MatIconModule
   ],
   exports: [
-    ModalMaterialComponent,
-    ModalMaterialService
+    ModalMaterialComponent
   ],
   providers: [
     ModalMaterialService
