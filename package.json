@@ -8,6 +8,7 @@
     "build-lib": "ng build modal-material --prod",
     "build": "ng build angular-modal-material --prod --base-href https://ivanantunes.github.io/angular-modal-material/",
     "verison-patch": "npm version patch && cd projects/modal-material/ && npm version patch && cd .. && cd ..",
+    "verison-minor": "npm version minor && cd projects/modal-material/ && npm version minor && cd .. && cd ..",
     "publish": "cd dist/modal-material/ && npm publish && cd .. && cd ..",
     "gh-pages": "./node_modules/.bin/gh-pages -d dist/angular-modal-material/",
     "test": "ng test",

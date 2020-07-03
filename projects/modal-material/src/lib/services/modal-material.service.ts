@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ModalType } from './../interfaces/modal-type';
 import { ModalMaterialComponent } from './../modal-material/modal-material.component';
 import { Observable, of } from 'rxjs';
+import { ModalTemplate, ModalTemplateLog, ModalTemplateConfirm, ModalManual, ModalManualLog, ModalManualConfirm } from '../interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -11,299 +12,194 @@ export class ModalMaterialService {
 
 constructor(private dialog: MatDialog) { }
 
-  mTSuccess(
-    title: string,
-    description: string,
-    btnCloseTitle: string,
-    width: string,
-    height: string,
-    disableClose: boolean
-  ): void {
+  mTSuccess(modalT: ModalTemplate): void {
     this.dialog.open(ModalMaterialComponent, {
-      width,
-      height,
-      disableClose,
+      width: modalT.width,
+      height: modalT.height,
+      disableClose: modalT.disableClose,
       data: {
         controlType: ModalType.tSuccess,
-        title,
-        description,
-        btnCloseTitle
+        title: modalT.title,
+        description: modalT.description,
+        btnCloseTitle: modalT.btnCloseTitle
       }
     });
   }
 
-  mTSuccessLog(
-    title: string,
-    description: string,
-    btnCloseTitle: string,
-    btnLogTitle: string,
-    log: string,
-    width: string,
-    height: string,
-    disableClose: boolean
-  ): void {
+  mTSuccessLog(modalTL: ModalTemplateLog): void {
     this.dialog.open(ModalMaterialComponent, {
-      width,
-      height,
-      disableClose,
+      width: modalTL.width,
+      height: modalTL.height,
+      disableClose: modalTL.disableClose,
       data: {
         controlType: ModalType.tSuccessLog,
-        title,
-        description,
-        btnLogTitle,
-        btnCloseTitle,
-        log
+        title: modalTL.title,
+        description: modalTL.description,
+        btnLogTitle: modalTL.btnLogTitle,
+        btnCloseTitle: modalTL.btnCloseTitle,
+        log: modalTL.log
       }
     });
   }
 
-  mTSuccessConfirm(
-    title: string,
-    description: string,
-    btnCloseTitle: string,
-    btnConfirmTitle: string,
-    width: string,
-    height: string,
-    disableClose: boolean
-  ): Observable<boolean> {
+  mTSuccessConfirm(modalTC: ModalTemplateConfirm): Observable<boolean> {
     const response = this.dialog.open(ModalMaterialComponent, {
-      width,
-      height,
-      disableClose,
+      width: modalTC.width,
+      height: modalTC.height,
+      disableClose: modalTC.disableClose,
       data: {
         controlType: ModalType.tSuccessConfirm,
-        title,
-        description,
-        btnCloseTitle,
-        btnConfirmTitle,
+        title: modalTC.title,
+        description: modalTC.description,
+        btnCloseTitle: modalTC.btnCloseTitle,
+        btnConfirmTitle: modalTC.btnConfirmTitle,
       }
     });
     return response.componentInstance.isConfirmed;
   }
 
-  mTAlert(
-    title: string,
-    description: string,
-    btnCloseTitle: string,
-    width: string,
-    height: string,
-    disableClose: boolean
-  ): void {
+  mTAlert(modalT: ModalTemplate): void {
     this.dialog.open(ModalMaterialComponent, {
-      width,
-      height,
-      disableClose,
+      width: modalT.width,
+      height: modalT.height,
+      disableClose: modalT.disableClose,
       data: {
         controlType: ModalType.tAlert,
-        title,
-        description,
-        btnCloseTitle
+        title: modalT.title,
+        description: modalT.description,
+        btnCloseTitle: modalT.btnCloseTitle
       }
     });
   }
 
-  mTAlertLog(
-    title: string,
-    description: string,
-    btnCloseTitle: string,
-    btnLogTitle: string,
-    log: string,
-    width: string,
-    height: string,
-    disableClose: boolean
-  ): void {
+  mTAlertLog(modalTL: ModalTemplateLog): void {
     this.dialog.open(ModalMaterialComponent, {
-      width,
-      height,
-      disableClose,
+      width: modalTL.width,
+      height: modalTL.height,
+      disableClose: modalTL.disableClose,
       data: {
         controlType: ModalType.tAlertLog,
-        title,
-        description,
-        btnLogTitle,
-        btnCloseTitle,
-        log
+        title: modalTL.title,
+        description: modalTL.description,
+        btnLogTitle: modalTL.btnLogTitle,
+        btnCloseTitle: modalTL.btnCloseTitle,
+        log: modalTL.log
       }
     });
   }
 
-  mTAlertConfirm(
-    title: string,
-    description: string,
-    btnCloseTitle: string,
-    btnConfirmTitle: string,
-    width: string,
-    height: string,
-    disableClose: boolean
-  ): Observable<boolean> {
+  mTAlertConfirm(modalTC: ModalTemplateConfirm): Observable<boolean> {
     const response = this.dialog.open(ModalMaterialComponent, {
-      width,
-      height,
-      disableClose,
+      width: modalTC.width,
+      height: modalTC.height,
+      disableClose: modalTC.disableClose,
       data: {
         controlType: ModalType.tAlertConfirm,
-        title,
-        description,
-        btnCloseTitle,
-        btnConfirmTitle,
+        title: modalTC.title,
+        description: modalTC.description,
+        btnCloseTitle: modalTC.btnCloseTitle,
+        btnConfirmTitle: modalTC.btnConfirmTitle,
       }
     });
     return response.componentInstance.isConfirmed;
   }
 
-  mTError(
-    title: string,
-    description: string,
-    btnCloseTitle: string,
-    width: string,
-    height: string,
-    disableClose: boolean
-  ): void {
+  mTError(modalT: ModalTemplate): void {
     this.dialog.open(ModalMaterialComponent, {
-      width,
-      height,
-      disableClose,
+      width: modalT.width,
+      height: modalT.height,
+      disableClose: modalT.disableClose,
       data: {
         controlType: ModalType.tError,
-        title,
-        description,
-        btnCloseTitle
+        title: modalT.title,
+        description: modalT.description,
+        btnCloseTitle: modalT.btnCloseTitle
       }
     });
   }
 
-  mTErrorLog(
-    title: string,
-    description: string,
-    btnCloseTitle: string,
-    btnLogTitle: string,
-    log: string,
-    width: string,
-    height: string,
-    disableClose: boolean
-  ): void {
+  mTErrorLog(modalTL: ModalTemplateLog): void {
     this.dialog.open(ModalMaterialComponent, {
-      width,
-      height,
-      disableClose,
+      width: modalTL.width,
+      height: modalTL.height,
+      disableClose: modalTL.disableClose,
       data: {
         controlType: ModalType.tErrorLog,
-        title,
-        description,
-        btnLogTitle,
-        btnCloseTitle,
-        log
+        title: modalTL.title,
+        description: modalTL.description,
+        btnLogTitle: modalTL.btnLogTitle,
+        btnCloseTitle: modalTL.btnCloseTitle,
+        log: modalTL.log
       }
     });
   }
 
-  mTErrorConfirm(
-    title: string,
-    description: string,
-    btnCloseTitle: string,
-    btnConfirmTitle: string,
-    width: string,
-    height: string,
-    disableClose: boolean
-  ): Observable<boolean> {
+  mTErrorConfirm(modalTC: ModalTemplateConfirm): Observable<boolean> {
     const response = this.dialog.open(ModalMaterialComponent, {
-      width,
-      height,
-      disableClose,
+      width: modalTC.width,
+      height: modalTC.height,
+      disableClose: modalTC.disableClose,
       data: {
         controlType: ModalType.tErrorConfirm,
-        title,
-        description,
-        btnCloseTitle,
-        btnConfirmTitle,
+        title: modalTC.title,
+        description: modalTC.description,
+        btnCloseTitle: modalTC.btnCloseTitle,
+        btnConfirmTitle: modalTC.btnConfirmTitle,
       }
     });
     return response.componentInstance.isConfirmed;
   }
 
-  mManualBasic(
-    title: string,
-    description: string,
-    btnCloseTitle: string,
-    icon: string,
-    mBackgroundColorIcon: string,
-    useMatIcon: boolean,
-    width: string,
-    height: string,
-    disableClose: boolean
-  ): void {
+  mManualBasic(modalMB: ModalManual): void {
     this.dialog.open(ModalMaterialComponent, {
-      width,
-      height,
-      disableClose,
+      width: modalMB.width,
+      height: modalMB.height,
+      disableClose: modalMB.disableClose,
       data: {
         controlType: ModalType.mBasic,
-        title,
-        description,
-        btnCloseTitle,
-        icon,
-        mBackgroundColorIcon,
-        useMatIcon
+        title: modalMB.title,
+        description: modalMB.description,
+        btnCloseTitle: modalMB.btnCloseTitle,
+        icon: modalMB.icon,
+        mBackgroundColorIcon: modalMB.mBackgroundColorIcon,
+        useMatIcon: modalMB.useMatIcon
       }
     });
   }
 
-  mManualLog(
-    title: string,
-    description: string,
-    btnCloseTitle: string,
-    btnLogTitle: string,
-    icon: string,
-    mBackgroundColorIcon: string,
-    useMatIcon: boolean,
-    log: string,
-    width: string,
-    height: string,
-    disableClose: boolean
-  ): void {
+  mManualLog(modalML: ModalManualLog): void {
     this.dialog.open(ModalMaterialComponent, {
-      width,
-      height,
-      disableClose,
+      width: modalML.modalMB.width,
+      height: modalML.modalMB.height,
+      disableClose: modalML.modalMB.disableClose,
       data: {
         controlType: ModalType.mLog,
-        title,
-        description,
-        btnLogTitle,
-        btnCloseTitle,
-        log,
-        icon,
-        mBackgroundColorIcon,
-        useMatIcon
+        title: modalML.modalMB.title,
+        description: modalML.modalMB.description,
+        btnLogTitle: modalML.btnLogTitle,
+        btnCloseTitle: modalML.modalMB.btnCloseTitle,
+        log: modalML.log,
+        icon: modalML.modalMB.icon,
+        mBackgroundColorIcon: modalML.modalMB.mBackgroundColorIcon,
+        useMatIcon: modalML.modalMB.useMatIcon
       }
     });
   }
 
-  mManualConfirm(
-    title: string,
-    description: string,
-    btnCloseTitle: string,
-    btnConfirmTitle: string,
-    icon: string,
-    mBackgroundColorIcon: string,
-    useMatIcon: boolean,
-    width: string,
-    height: string,
-    disableClose: boolean
-  ): Observable<boolean> {
+  mManualConfirm(modalMC: ModalManualConfirm): Observable<boolean> {
     const response = this.dialog.open(ModalMaterialComponent, {
-      width,
-      height,
-      disableClose,
+      width: modalMC.modalMB.width,
+      height: modalMC.modalMB.height,
+      disableClose: modalMC.modalMB.disableClose,
       data: {
         controlType: ModalType.mConfirm,
-        title,
-        description,
-        btnCloseTitle,
-        btnConfirmTitle,
-        icon,
-        mBackgroundColorIcon,
-        useMatIcon
+        title: modalMC.modalMB.title,
+        description: modalMC.modalMB.description,
+        btnCloseTitle: modalMC.modalMB.btnCloseTitle,
+        btnConfirmTitle: modalMC.btnConfirmTitle,
+        icon: modalMC.modalMB.icon,
+        mBackgroundColorIcon: modalMC.modalMB.mBackgroundColorIcon,
+        useMatIcon: modalMC.modalMB.useMatIcon
       }
     });
     return response.componentInstance.isConfirmed;
