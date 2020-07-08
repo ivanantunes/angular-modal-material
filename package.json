@@ -27,7 +27,7 @@
   ],
   "license": "MIT",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://www.npmjs.com/package/"
   },
   "scripts": {
     "ng": "ng",
