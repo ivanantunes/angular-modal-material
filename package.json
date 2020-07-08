@@ -1,34 +1,6 @@
 {
   "name": "angular-modal-material",
   "version": "0.2.3",
-  "description": "A service developed based on the angular material. Containing customizable and templete alerts.",
-  "author": {
-    "email": "ivanantnes75@gmail.com",
-    "name": "Ivan Antunes",
-    "url": "http://github.com/ivanantunes/"
-  },
-  "repository": {
-    "type": "git",
-    "directory": "angular-modal-material",
-    "url": "https://github.com/ivanantunes/angular-modal-material.git"
-  },
-  "bugs": {
-    "email": "ivanantnes75@gmail.com",
-    "url": "https://github.com/ivanantunes/angular-modal-material/issues"
-  },
-  "homepage": "https://github.com/ivanantunes/angular-modal-material",
-  "keywords": [
-    "angular",
-    "javascript",
-    "typescript",
-    "angular-material",
-    "modal-alerts",
-    "alerts"
-  ],
-  "license": "MIT",
-  "publishConfig": {
-    "registry": "https://www.npmjs.com/package/"
-  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
