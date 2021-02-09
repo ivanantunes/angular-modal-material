@@ -30,7 +30,6 @@
     "@angular/router": "~10.2.4",
     "components-font-awesome": "^5.9.0",
     "material-design-icons": "^3.0.1",
-    "modal-material": "0.0.2",
     "roboto-fontface": "^0.10.0",
     "rxjs": "~6.5.4",
     "tslib": "^2.0.0",
